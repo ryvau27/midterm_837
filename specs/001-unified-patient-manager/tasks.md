@@ -51,7 +51,7 @@ description: "Task list template for feature implementation"
 - [ ] T011 Create seed data for pre-configured users and sample patients in backend/src/database/seed.js
 - [ ] T012 Create Express server setup with CORS and JSON middleware in backend/server.js
 - [ ] T013 Create authentication middleware for role-based access control in backend/src/middleware/auth.js
-- [ ] T014 Create audit logging middleware for HIPAA compliance in backend/src/middleware/audit.js
+- [ ] T014 Create login logging middleware for basic accountability in backend/src/middleware/audit.js
 - [ ] T015 Create React app structure with routing setup in frontend/src/App.js
 - [ ] T016 Create authentication context for session management in frontend/src/context/AuthContext.js
 - [ ] T017 Create login page component in frontend/src/pages/LoginPage.js
@@ -63,9 +63,9 @@ description: "Task list template for feature implementation"
 
 ## Phase 3: User Story 1 - Physician Accesses Patient Records (Priority: P1) 🎯 MVP
 
-**Goal**: Physician can login and view complete patient medical records with audit logging
+**Goal**: Physician can login and view complete patient medical records
 
-**Independent Test**: Can be fully tested by physician login, patient search, record viewing, and audit log verification
+**Independent Test**: Can be fully tested by physician login, patient search, and record viewing
 
 ### Implementation for User Story 1
 
@@ -79,13 +79,11 @@ description: "Task list template for feature implementation"
 - [ ] T026 [US1] Create AuditLog database model in backend/src/models/AuditLog.js
 - [ ] T027 [US1] Implement patient search API endpoint in backend/src/routes/patients.js
 - [ ] T028 [US1] Implement patient record retrieval API endpoint in backend/src/routes/patients.js
-- [ ] T029 [US1] Implement audit logging service in backend/src/services/auditService.js
-- [ ] T030 [US1] Create physician dashboard page in frontend/src/pages/PhysicianDashboard.js
-- [ ] T031 [US1] Create patient search component in frontend/src/components/PatientSearch.js
-- [ ] T032 [US1] Create patient record display component in frontend/src/components/PatientRecord.js
-- [ ] T033 [US1] Implement role-based routing for physician dashboard in frontend/src/App.js
-- [ ] T034 [US1] Connect patient search to API in frontend/src/services/patientService.js
-- [ ] T035 [US1] Add audit logging to patient access endpoints in backend/src/routes/patients.js
+- [ ] T029 [US1] Create physician dashboard page in frontend/src/pages/PhysicianDashboard.js
+- [ ] T030 [US1] Create patient search component in frontend/src/components/PatientSearch.js
+- [ ] T031 [US1] Create patient record display component in frontend/src/components/PatientRecord.js
+- [ ] T032 [US1] Implement role-based routing for physician dashboard in frontend/src/App.js
+- [ ] T033 [US1] Connect patient search to API in frontend/src/services/patientService.js
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -108,7 +106,6 @@ description: "Task list template for feature implementation"
 - [ ] T042 [US2] Implement client-side validation for vital signs in frontend/src/utils/validation.js
 - [ ] T043 [US2] Implement role-based routing for nurse dashboard in frontend/src/App.js
 - [ ] T044 [US2] Connect vital signs form to API in frontend/src/services/vitalService.js
-- [ ] T045 [US2] Add audit logging to vital signs updates in backend/src/routes/vitals.js
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -150,7 +147,6 @@ description: "Task list template for feature implementation"
 - [ ] T058 [US4] Create billing generator component in frontend/src/components/BillingGenerator.js
 - [ ] T059 [US4] Add billing features to physician dashboard in frontend/src/pages/PhysicianDashboard.js
 - [ ] T060 [US4] Connect billing components to API in frontend/src/services/billingService.js
-- [ ] T061 [US4] Add audit logging to billing operations in backend/src/routes/billing.js
 
 **Checkpoint**: At this point, User Stories 1, 2, 3 AND 4 should all work independently
 
@@ -158,7 +154,7 @@ description: "Task list template for feature implementation"
 
 ## Phase 7: User Story 5 - Administrator Reviews Audit Logs (Priority: P3)
 
-**Goal**: System administrator can review and filter audit logs for compliance monitoring
+**Goal**: System administrator can review login audit logs for basic accountability
 
 **Independent Test**: Can be fully tested by admin login, log filtering, display, and read-only verification
 

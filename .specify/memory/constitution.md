@@ -11,7 +11,8 @@ Follow-up TODOs: none
 
 ## Core Principles
 
-
+### I. Simplified School Project Approach
+This is an academic demonstration project. Focus on core functionality and role-based access patterns. Use simplified authentication and mock data. No complex security frameworks or extensive compliance requirements needed for educational purposes.
 
 ### II. Role-Based Access Control
 User roles (Physician, Patient, Nurse, System Administrator) determine access permissions and dashboard routing. Each role has pre-configured credentials for simple username/password authentication. Role-based access must be enforced on both frontend routes and backend API endpoints. Authentication simulates login by redirecting to role-specific dashboards without external services or session management.
@@ -19,8 +20,8 @@ User roles (Physician, Patient, Nurse, System Administrator) determine access pe
 ### III. Data Integrity and Validation
 All medical data inputs must be validated for realistic value ranges and required fields. Vital signs must conform to medical standards (e.g., blood pressure ranges, temperature limits). Patient records must maintain referential integrity. Input validation occurs before storage with clear error messaging for invalid data.
 
-### IV. Audit Logging and Accountability
-Every access to patient records must be logged with timestamp, actor ID, and action performed. Audit logs are immutable and read-only. System administrators can review logs for compliance monitoring. All record updates and views generate audit entries. Logs support HIPAA compliance requirements for academic demonstration.
+### IV. Simplified Audit Logging
+Only user logins are logged for basic accountability tracking. Login attempts (successful and failed) are recorded with timestamps. System administrators can review login logs. No extensive audit trail required for academic demonstration.
 
 ### V. Simplified Authentication and Mock Data
 No complex authentication frameworks, OAuth, or external identity providers. Use simple username/password validation against pre-configured test accounts. Mock data is required and encouraged for patients, medical records, visits, and external systems. Pre-configured credentials enable role-based testing without production authentication complexity.

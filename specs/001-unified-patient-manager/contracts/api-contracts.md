@@ -307,7 +307,7 @@ The UPM backend provides a RESTful API with role-based access control. All endpo
 ## Audit Log Endpoints
 
 ### GET /api/audit/logs
-**Purpose**: Retrieve audit logs with filtering (Admin only)
+**Purpose**: Retrieve login audit logs with filtering (Admin only)
 
 **Required Role**: admin
 
@@ -315,7 +315,7 @@ The UPM backend provides a RESTful API with role-based access control. All endpo
 - `startDate` (ISO date string): Filter logs after this date
 - `endDate` (ISO date string): Filter logs before this date
 - `userType` (string): Filter by role ("physician", "nurse", "patient", "admin", "all")
-- `actionType` (string): Filter by action ("LOGIN", "VIEW_RECORD", "UPDATE_VITALS", "GENERATE_BILLING", "all")
+- `actionType` (string): Filter by action ("LOGIN", "LOGIN_FAILED", "all")
 
 **Success Response (200)**:
 ```json
@@ -327,9 +327,7 @@ The UPM backend provides a RESTful API with role-based access control. All endpo
       "timestamp": "2025-11-12T14:30:00Z",
       "userID": 1,
       "userRole": "physician",
-      "actionType": "VIEW_RECORD",
-      "targetPatientID": 2,
-      "details": "{\"recordID\": 1, \"patientName\": \"John Doe\"}",
+      "actionType": "LOGIN",
       "ipAddress": "192.168.1.100"
     }
   ],
@@ -391,9 +389,9 @@ The UPM backend provides a RESTful API with role-based access control. All endpo
   - `/api/audit/*`: admin
 - Returns 403 for insufficient permissions
 
-### Audit Logging Middleware
-- Automatically logs all patient data access operations
-- Captures: timestamp, userID, actionType, targetPatientID, request details
+### Login Audit Logging Middleware
+- Automatically logs user login attempts (successful and failed)
+- Captures: timestamp, userID, userRole, actionType, ipAddress
 - Does not interfere with response times
 - Logs to database asynchronously
 

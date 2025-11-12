@@ -22,7 +22,7 @@ The Unified Patient Manager (UPM) is a healthcare application providing centrali
 **Testing**: Manual testing only (unit testing NOT required for academic project)
 **Target Platform**: Web browsers (Chrome, Firefox, Safari, Edge)
 **Project Type**: Web application (frontend + backend)
-**Performance Goals**: Sub-5 second response times for all user interactions, 100% audit logging completeness
+**Performance Goals**: Functional operation of all user interactions, basic audit logging for logins
 **Constraints**:
   - JavaScript only (no TypeScript)
   - Simple authentication (username/password comparison, no encryption frameworks)
@@ -35,12 +35,12 @@ The Unified Patient Manager (UPM) is a healthcare application providing centrali
 
 *GATE: Must pass before Phase 0 research. ✅ PASSED after Phase 1 design - all constitution principles satisfied.*
 
-### UPM Constitution Compliance Gates
+### Simplified School Project Constitution Compliance Gates
 
-**GATE 1 - HIPAA Compliance and Security**
-- [x] Does the feature handle patient PHI appropriately? (Patient records contain PHI, handled with role-based access)
-- [x] Is audit logging implemented for all data access? (All patient data access logged with timestamps and actor IDs)
-- [x] Are security measures appropriate for academic demonstration? (Simple auth with role-based routing, audit trails)
+**GATE 1 - Simplified School Project Approach**
+- [x] Is this treated as an academic demonstration project? (Focus on core functionality without complex compliance)
+- [x] Are simplified approaches used for authentication and data handling? (Plain text passwords, mock data)
+- [x] No complex security frameworks required? (Simple role-based access without extensive compliance)
 
 **GATE 2 - Role-Based Access Control**
 - [x] Does the feature respect user roles (Physician, Patient, Nurse, System Administrator)? (4 pre-configured roles with specific permissions)
@@ -52,10 +52,10 @@ The Unified Patient Manager (UPM) is a healthcare application providing centrali
 - [x] Do vital signs conform to medical standards? (Temperature 95-105°F, BP 80-200/50-120, etc.)
 - [x] Is referential integrity maintained? (SQLite foreign keys maintain relationships between entities)
 
-**GATE 4 - Audit Logging and Accountability**
-- [x] Are all record accesses logged with timestamps and actor IDs? (Every view/update/billing action logged)
-- [x] Are audit logs immutable and read-only? (Logs stored in database, only admins can view, no delete endpoints)
-- [x] Can system administrators review compliance logs? (Admin dashboard provides log filtering and review)
+**GATE 4 - Simplified Audit Logging**
+- [x] Are user logins logged with timestamps? (Login attempts recorded for basic accountability)
+- [x] Are audit logs read-only for administrators? (Admin can review login logs)
+- [x] No extensive audit trail required? (Only login events logged, not all data access)
 
 **GATE 5 - Technical Standards**
 - [x] Is JavaScript used exclusively (NO TypeScript)? (Both frontend and backend use JavaScript only)

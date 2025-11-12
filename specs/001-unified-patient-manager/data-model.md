@@ -221,21 +221,18 @@ The UPM system uses a relational SQLite database with foreign key relationships 
 - `contactInfo` must be valid JSON if provided
 
 ### AuditLog
-**Purpose**: Tracks all access to patient data for HIPAA compliance
+**Purpose**: Tracks user login attempts for basic accountability
 
 **Fields**:
 - `logID` (INTEGER, PRIMARY KEY, AUTOINCREMENT)
 - `timestamp` (DATETIME, DEFAULT CURRENT_TIMESTAMP)
 - `userID` (INTEGER, NOT NULL, FOREIGN KEY → Person.personID)
 - `userRole` (TEXT, NOT NULL)
-- `actionType` (TEXT, NOT NULL) - Values: "LOGIN", "LOGIN_FAILED", "LOGOUT", "VIEW_RECORD", "UPDATE_VITALS", "GENERATE_BILLING", "VIEW_LOGS"
-- `targetPatientID` (INTEGER, FOREIGN KEY → Patient.personID) - Nullable
-- `details` (TEXT) - Additional context as JSON string
+- `actionType` (TEXT, NOT NULL) - Values: "LOGIN", "LOGIN_FAILED"
 - `ipAddress` (TEXT) - Client IP for logging
 
 **Relationships**:
 - Logs actions by one Person (N:1)
-- May reference a target Patient (N:1)
 
 **Validation Rules**:
 - `actionType` must be one of allowed values

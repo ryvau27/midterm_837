@@ -107,7 +107,7 @@ System administrator reviews access logs for compliance monitoring and security
 - **FR-006**: System MUST allow physicians to generate billing summaries from completed visits with automatic cost calculation
 - **FR-007**: System MUST submit generated billing summaries to mock insurance provider systems
 - **FR-008**: System MUST allow system administrators to review and filter audit logs by date range, user type, and action type
-- **FR-009**: System MUST automatically log all patient data access and modifications with timestamps, user IDs, and action details
+- **FR-009**: System MUST log user login attempts (successful and failed) with timestamps for basic accountability
 - **FR-010**: System MUST validate all medical inputs against realistic healthcare value ranges
 - **FR-011**: System MUST enforce role-based access control preventing unauthorized access to features and data
 - **FR-012**: System MUST provide clear error messages for validation failures and access denied scenarios
@@ -131,13 +131,13 @@ System administrator reviews access logs for compliance monitoring and security
 
 ### Measurable Outcomes
 
-- **SC-001**: Users complete login process in under 5 seconds with 100% success rate for valid credentials
-- **SC-002**: Physicians retrieve and display patient records within 3 seconds of search completion
-- **SC-003**: Nurses successfully update patient vital signs with proper validation in under 10 seconds
-- **SC-004**: Patients view their complete medical history within 5 seconds of dashboard load
-- **SC-005**: Physicians generate billing summaries for selected visits within 5 seconds
-- **SC-006**: System administrators filter and display audit logs within 3 seconds of applying filters
-- **SC-007**: All patient data access operations are logged with 100% audit trail completeness
-- **SC-008**: Role-based access control prevents unauthorized access attempts with 100% effectiveness
-- **SC-009**: System validates 100% of medical input data against appropriate value ranges
+- **SC-001**: Users can successfully login with valid credentials and access their role-appropriate dashboard
+- **SC-002**: Physicians can search for and view patient records including vital signs
+- **SC-003**: Nurses can update patient vital signs with proper validation of medical ranges
+- **SC-004**: Patients can view their own medical records in read-only format
+- **SC-005**: Physicians can generate billing summaries from completed visits
+- **SC-006**: System administrators can review login audit logs
+- **SC-007**: User login attempts are logged with timestamps for basic accountability
+- **SC-008**: Role-based access control prevents unauthorized access attempts
+- **SC-009**: System validates vital sign inputs against appropriate medical ranges
 - **SC-010**: Application runs successfully in Docker environment with all five use cases functional
