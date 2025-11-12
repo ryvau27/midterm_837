@@ -1,0 +1,30 @@
+﻿# SWENG837_MIDTERM Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2025-11-11
+
+## Active Technologies
+
+- JavaScript (ES6+) - NO TypeScript allowed (001-unified-patient-manager)
+
+## Project Structure
+
+```text
+backend/
+frontend/
+tests/
+```
+
+## Commands
+
+npm test; npm run lint
+
+## Code Style
+
+JavaScript (ES6+) - NO TypeScript allowed: Follow standard conventions
+
+## Recent Changes
+
+- 001-unified-patient-manager: Added JavaScript (ES6+) - NO TypeScript allowed
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->
