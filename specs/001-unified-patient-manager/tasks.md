@@ -29,14 +29,14 @@ description: "Task list template for feature implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create backend directory structure per plan.md
-- [ ] T002 Create frontend directory structure per plan.md
-- [ ] T003 [P] Initialize backend package.json with Node.js dependencies in backend/package.json
-- [ ] T004 [P] Initialize frontend package.json with React dependencies in frontend/package.json
-- [ ] T005 Create docker-compose.yml for container orchestration in docker-compose.yml
-- [ ] T006 Create Dockerfile for backend Node.js application in backend/Dockerfile
-- [ ] T007 Create Dockerfile and nginx.conf for frontend React application in frontend/Dockerfile and frontend/nginx.conf
-- [ ] T008 Create README.md with setup instructions in README.md
+- [x] T001 Create backend directory structure per plan.md
+- [x] T002 Create frontend directory structure per plan.md
+- [x] T003 [P] Initialize backend package.json with Node.js dependencies in backend/package.json
+- [x] T004 [P] Initialize frontend package.json with React dependencies in frontend/package.json
+- [x] T005 Create docker-compose.yml for container orchestration in docker-compose.yml
+- [x] T006 Create Dockerfile for backend Node.js application in backend/Dockerfile
+- [x] T007 Create Dockerfile and nginx.conf for frontend React application in frontend/Dockerfile and frontend/nginx.conf
+- [x] T008 Create README.md with setup instructions in README.md
 
 ---
 
@@ -46,16 +46,16 @@ description: "Task list template for feature implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T009 Create SQLite database schema with all tables in backend/src/database/schema.sql
-- [ ] T010 Create database initialization script with foreign keys in backend/src/database/init.js
-- [ ] T011 Create seed data for pre-configured users and sample patients in backend/src/database/seed.js
-- [ ] T012 Create Express server setup with CORS and JSON middleware in backend/server.js
-- [ ] T013 Create authentication middleware for role-based access control in backend/src/middleware/auth.js
-- [ ] T014 Create login logging middleware for basic accountability in backend/src/middleware/audit.js
-- [ ] T015 Create React app structure with routing setup in frontend/src/App.js
-- [ ] T016 Create authentication context for session management in frontend/src/context/AuthContext.js
-- [ ] T017 Create login page component in frontend/src/pages/LoginPage.js
-- [ ] T018 Create API service functions for HTTP requests in frontend/src/services/api.js
+- [x] T009 Create SQLite database schema with all tables in backend/src/database/schema.sql
+- [x] T010 Create database initialization script with foreign keys in backend/src/database/init.js
+- [x] T011 Create seed data for pre-configured users and sample patients in backend/src/database/seed.js
+- [x] T012 Create Express server setup with CORS and JSON middleware in backend/server.js
+- [x] T013 Create authentication middleware for role-based access control in backend/src/middleware/auth.js
+- [x] T014 Create login logging middleware for basic accountability in backend/src/middleware/audit.js
+- [x] T015 Create React app structure with routing setup in frontend/src/App.js
+- [x] T016 Create authentication context for session management in frontend/src/context/AuthContext.js
+- [x] T017 Create login page component in frontend/src/pages/LoginPage.js
+- [x] T018 Create API service functions for HTTP requests in frontend/src/services/api.js
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
