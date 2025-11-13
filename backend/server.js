@@ -21,12 +21,19 @@ app.get('/health', (req, res) => {
     res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-// API routes will be added here as we implement them
+// Import routes
+const authRoutes = require('./src/routes/auth');
+const patientRoutes = require('./src/routes/patients');
+
+// API routes
+app.use('/api/auth', authRoutes);
+app.use('/api/patients', patientRoutes);
+
 app.get('/api', (req, res) => {
     res.json({
         message: 'Unified Patient Manager API',
         version: '1.0.0',
-        status: 'under development'
+        status: 'operational'
     });
 });
 

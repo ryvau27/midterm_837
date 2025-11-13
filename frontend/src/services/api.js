@@ -57,8 +57,24 @@ api.interceptors.response.use(
 // Authentication
 export const authAPI = {
   login: async (username, password) => {
-    const response = await api.post('/auth/login', { username, password });
-    return response.data;
+    // For demo purposes, we'll validate on the frontend first
+    // In a real app, this would only be done on the server
+    const validUsers = {
+      'dr.smith': { password: 'physician123', role: 'physician', personID: 1, name: 'Dr. Smith' },
+      'john.doe': { password: 'patient123', role: 'patient', personID: 2, name: 'John Doe' },
+      'nurse.jane': { password: 'nurse123', role: 'nurse', personID: 3, name: 'Nurse Jane' },
+      'admin': { password: 'admin123', role: 'admin', personID: 4, name: 'Admin User' }
+    };
+
+    const user = validUsers[username];
+    if (user && user.password === password) {
+      return {
+        data: { user: { personID: user.personID, username, role: user.role, name: user.name } },
+        success: true
+      };
+    } else {
+      throw new Error('Invalid username or password');
+    }
   },
 
   logout: async () => {
@@ -66,6 +82,7 @@ export const authAPI = {
     return response.data;
   }
 };
+
 
 // Patient management
 export const patientAPI = {

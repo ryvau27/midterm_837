@@ -69,21 +69,21 @@ description: "Task list template for feature implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T019 [US1] Create Person database model in backend/src/models/Person.js
-- [ ] T020 [US1] Create Patient database model in backend/src/models/Patient.js
-- [ ] T021 [US1] Create Physician database model in backend/src/models/Physician.js
-- [ ] T022 [US1] Create PatientRecord database model in backend/src/models/PatientRecord.js
-- [ ] T023 [US1] Create Visit database model in backend/src/models/Visit.js
-- [ ] T024 [US1] Create VitalSign database model in backend/src/models/VitalSign.js
-- [ ] T025 [US1] Create Prescription database model in backend/src/models/Prescription.js
-- [ ] T026 [US1] Create AuditLog database model in backend/src/models/AuditLog.js
-- [ ] T027 [US1] Implement patient search API endpoint in backend/src/routes/patients.js
-- [ ] T028 [US1] Implement patient record retrieval API endpoint in backend/src/routes/patients.js
-- [ ] T029 [US1] Create physician dashboard page in frontend/src/pages/PhysicianDashboard.js
-- [ ] T030 [US1] Create patient search component in frontend/src/components/PatientSearch.js
-- [ ] T031 [US1] Create patient record display component in frontend/src/components/PatientRecord.js
-- [ ] T032 [US1] Implement role-based routing for physician dashboard in frontend/src/App.js
-- [ ] T033 [US1] Connect patient search to API in frontend/src/services/patientService.js
+- [x] T019 [US1] Create Person database model in backend/src/models/Person.js
+- [x] T020 [US1] Create Patient database model in backend/src/models/Patient.js
+- [x] T021 [US1] Create Physician database model in backend/src/models/Physician.js
+- [x] T022 [US1] Create PatientRecord database model in backend/src/models/PatientRecord.js
+- [x] T023 [US1] Create Visit database model in backend/src/models/Visit.js
+- [x] T024 [US1] Create VitalSign database model in backend/src/models/VitalSign.js
+- [x] T025 [US1] Create Prescription database model in backend/src/models/Prescription.js
+- [x] T026 [US1] Create AuditLog database model in backend/src/models/AuditLog.js
+- [x] T027 [US1] Implement patient search API endpoint in backend/src/routes/patients.js
+- [x] T028 [US1] Implement patient record retrieval API endpoint in backend/src/routes/patients.js
+- [x] T029 [US1] Create physician dashboard page in frontend/src/pages/PhysicianDashboard.js
+- [x] T030 [US1] Create patient search component in frontend/src/components/PatientSearch.js
+- [x] T031 [US1] Create patient record display component in frontend/src/components/PatientRecord.js
+- [x] T032 [US1] Implement role-based routing for physician dashboard in frontend/src/App.js
+- [x] T033 [US1] Connect patient search to API in frontend/src/services/patientService.js
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
