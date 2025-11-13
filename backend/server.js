@@ -24,10 +24,18 @@ app.get('/health', (req, res) => {
 // Import routes
 const authRoutes = require('./src/routes/auth');
 const patientRoutes = require('./src/routes/patients');
+const vitalsRoutes = require('./src/routes/vitals');
+const billingRoutes = require('./src/routes/billing');
+const auditRoutes = require('./src/routes/audit');
+const mockInsuranceRoutes = require('./src/routes/mockInsurance');
 
 // API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/patients', patientRoutes);
+app.use('/api', vitalsRoutes);
+app.use('/api', billingRoutes);
+app.use('/api/audit', auditRoutes);
+app.use('/api/mock', mockInsuranceRoutes);
 
 app.get('/api', (req, res) => {
     res.json({

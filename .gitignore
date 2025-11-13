@@ -1,12 +1,17 @@
-# Dependencies
+# Node.js/JavaScript
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
 
-# Production builds
-build/
+# Build outputs
 dist/
+build/
+*.tgz
+*.tar.gz
 
 # Environment variables
 .env
@@ -21,6 +26,7 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 lerna-debug.log*
 
 # Runtime data
@@ -37,8 +43,10 @@ coverage/
 .nyc_output
 
 # Dependency directories
-node_modules/
 jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
 
 # Optional npm cache directory
 .npm
@@ -76,13 +84,23 @@ dist
 .cache/
 public
 
-# Storybook build outputs
-.out
-.storybook-out
+# Vuepress build output
+.vuepress/dist
 
-# Temporary folders
-tmp/
-temp/
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
 
 # OS generated files
 .DS_Store
@@ -104,6 +122,12 @@ Thumbs.db
 *.db
 *.sqlite
 *.sqlite3
+upm.db
+data/*.db
 
-# Docker volumes
-data/
+# Docker
+.dockerignore
+
+# Temporary files
+*.tmp
+*.temp

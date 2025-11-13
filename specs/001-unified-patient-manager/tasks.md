@@ -97,15 +97,15 @@ description: "Task list template for feature implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T036 [US2] Create Nurse database model in backend/src/models/Nurse.js
-- [ ] T037 [US2] Implement vital signs validation utility in backend/src/utils/validation.js
-- [ ] T038 [US2] Implement patient vitals update API endpoint in backend/src/routes/vitals.js
-- [ ] T039 [US2] Create nurse dashboard page in frontend/src/pages/NurseDashboard.js
-- [ ] T040 [US2] Create vital signs input form component in frontend/src/components/VitalSignsForm.js
-- [ ] T041 [US2] Create patient selector component in frontend/src/components/PatientSelector.js
-- [ ] T042 [US2] Implement client-side validation for vital signs in frontend/src/utils/validation.js
-- [ ] T043 [US2] Implement role-based routing for nurse dashboard in frontend/src/App.js
-- [ ] T044 [US2] Connect vital signs form to API in frontend/src/services/vitalService.js
+- [x] T036 [US2] Create Nurse database model in backend/src/models/Nurse.js
+- [x] T037 [US2] Implement vital signs validation utility in backend/src/utils/validation.js
+- [x] T038 [US2] Implement patient vitals update API endpoint in backend/src/routes/vitals.js
+- [x] T039 [US2] Create nurse dashboard page in frontend/src/pages/NurseDashboard.js
+- [x] T040 [US2] Create vital signs input form component in frontend/src/components/VitalSignsForm.js
+- [x] T041 [US2] Create patient selector component in frontend/src/components/PatientSelector.js
+- [x] T042 [US2] Implement client-side validation for vital signs in frontend/src/utils/validation.js
+- [x] T043 [US2] Implement role-based routing for nurse dashboard in frontend/src/App.js
+- [x] T044 [US2] Connect vital signs form to API in frontend/src/services/vitalService.js
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -119,12 +119,12 @@ description: "Task list template for feature implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T046 [US3] Implement patient self-service API endpoint in backend/src/routes/patients.js
-- [ ] T047 [US3] Create patient dashboard page in frontend/src/pages/PatientDashboard.js
-- [ ] T048 [US3] Create read-only patient record component in frontend/src/components/PatientRecordView.js
-- [ ] T049 [US3] Implement role-based routing for patient dashboard in frontend/src/App.js
-- [ ] T050 [US3] Add access control to prevent patients from viewing other patient data in backend/src/middleware/auth.js
-- [ ] T051 [US3] Connect patient dashboard to self-service API in frontend/src/services/patientService.js
+- [x] T046 [US3] Implement patient self-service API endpoint in backend/src/routes/patients.js
+- [x] T047 [US3] Create patient dashboard page in frontend/src/pages/PatientDashboard.js
+- [x] T048 [US3] Create read-only patient record component in frontend/src/components/PatientRecordView.js
+- [x] T049 [US3] Implement role-based routing for patient dashboard in frontend/src/App.js
+- [x] T050 [US3] Add access control to prevent patients from viewing other patient data in backend/src/middleware/auth.js
+- [x] T051 [US3] Connect patient dashboard to self-service API in frontend/src/services/patientService.js
 
 **Checkpoint**: At this point, User Stories 1, 2 AND 3 should all work independently
 
@@ -138,15 +138,15 @@ description: "Task list template for feature implementation"
 
 ### Implementation for User Story 4
 
-- [ ] T052 [US4] Create BillingSummary database model in backend/src/models/BillingSummary.js
-- [ ] T053 [US4] Create InsuranceProvider database model in backend/src/models/InsuranceProvider.js
-- [ ] T054 [US4] Implement billing calculation service in backend/src/services/billingService.js
-- [ ] T055 [US4] Implement unbilled visits API endpoint in backend/src/routes/billing.js
-- [ ] T056 [US4] Implement billing generation API endpoint in backend/src/routes/billing.js
-- [ ] T057 [US4] Implement mock insurance provider API in backend/src/routes/mockInsurance.js
-- [ ] T058 [US4] Create billing generator component in frontend/src/components/BillingGenerator.js
-- [ ] T059 [US4] Add billing features to physician dashboard in frontend/src/pages/PhysicianDashboard.js
-- [ ] T060 [US4] Connect billing components to API in frontend/src/services/billingService.js
+- [x] T052 [US4] Create BillingSummary database model in backend/src/models/BillingSummary.js
+- [x] T053 [US4] Create InsuranceProvider database model in backend/src/models/InsuranceProvider.js
+- [x] T054 [US4] Implement billing calculation service in backend/src/services/billingService.js
+- [x] T055 [US4] Implement unbilled visits API endpoint in backend/src/routes/billing.js
+- [x] T056 [US4] Implement billing generation API endpoint in backend/src/routes/billing.js
+- [x] T057 [US4] Implement mock insurance provider API in backend/src/routes/mockInsurance.js
+- [x] T058 [US4] Create billing generator component in frontend/src/components/BillingGenerator.js
+- [x] T059 [US4] Add billing features to physician dashboard in frontend/src/pages/PhysicianDashboard.js
+- [x] T060 [US4] Connect billing components to API in frontend/src/services/billingService.js
 
 **Checkpoint**: At this point, User Stories 1, 2, 3 AND 4 should all work independently
 
@@ -160,14 +160,14 @@ description: "Task list template for feature implementation"
 
 ### Implementation for User Story 5
 
-- [ ] T062 [US5] Create SystemAdministrator database model in backend/src/models/SystemAdministrator.js
-- [ ] T063 [US5] Implement audit log filtering API endpoint in backend/src/routes/audit.js
-- [ ] T064 [US5] Create admin dashboard page in frontend/src/pages/AdminDashboard.js
-- [ ] T065 [US5] Create audit log viewer component in frontend/src/components/AuditLogViewer.js
-- [ ] T066 [US5] Create audit log filter component in frontend/src/components/AuditLogFilters.js
-- [ ] T067 [US5] Implement role-based routing for admin dashboard in frontend/src/App.js
-- [ ] T068 [US5] Connect audit log viewer to API in frontend/src/services/auditService.js
-- [ ] T069 [US5] Add read-only protection to audit log endpoints in backend/src/routes/audit.js
+- [x] T062 [US5] Create SystemAdministrator database model in backend/src/models/SystemAdministrator.js
+- [x] T063 [US5] Implement audit log filtering API endpoint in backend/src/routes/audit.js
+- [x] T064 [US5] Create admin dashboard page in frontend/src/pages/AdminDashboard.js
+- [x] T065 [US5] Create audit log viewer component in frontend/src/components/AuditLogViewer.js
+- [x] T066 [US5] Create audit log filter component in frontend/src/components/AuditLogFilters.js
+- [x] T067 [US5] Implement role-based routing for admin dashboard in frontend/src/App.js
+- [x] T068 [US5] Connect audit log viewer to API in frontend/src/services/auditService.js
+- [x] T069 [US5] Add read-only protection to audit log endpoints in backend/src/routes/audit.js
 
 **Checkpoint**: All user stories should now be independently functional
 

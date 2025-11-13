@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import PatientSearch from '../components/PatientSearch';
 import PatientRecord from '../components/PatientRecord';
+import BillingGenerator from '../components/BillingGenerator';
 
 const PhysicianDashboard = () => {
   const { user, logout } = useAuth();
@@ -84,11 +85,7 @@ const PhysicianDashboard = () => {
         )}
 
         {activeTab === 'billing' && (
-          <div style={{ padding: '2rem', background: 'white', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-            <h3>Billing Management</h3>
-            <p>Generate billing summaries for completed patient visits.</p>
-            <p><em>Billing functionality will be implemented in a future phase.</em></p>
-          </div>
+          <BillingGenerator />
         )}
       </div>
     </div>
