@@ -18,13 +18,18 @@ class InsuranceProvider {
   static getAll(callback) {
     const db = new sqlite3.Database(DB_PATH);
     const sql = `
-      SELECT ip.*,
+      SELECT ip.providerID,
+             ip.providerName,
+             ip.contactInfo,
+             ip.apiEndpoint,
+             ip.createdAt,
+             ip.updatedAt,
              COUNT(bs.billingID) as totalBillings,
              COUNT(CASE WHEN bs.status = 'paid' THEN 1 END) as paidBillings,
              SUM(CASE WHEN bs.status = 'paid' THEN bs.totalCost ELSE 0 END) as totalPaidAmount
       FROM InsuranceProvider ip
       LEFT JOIN BillingSummary bs ON ip.providerID = bs.insuranceProviderID
-      GROUP BY ip.providerID
+      GROUP BY ip.providerID, ip.providerName, ip.contactInfo, ip.apiEndpoint, ip.createdAt, ip.updatedAt
       ORDER BY ip.providerName
     `;
 
@@ -42,14 +47,19 @@ class InsuranceProvider {
   static getById(providerID, callback) {
     const db = new sqlite3.Database(DB_PATH);
     const sql = `
-      SELECT ip.*,
+      SELECT ip.providerID,
+             ip.providerName,
+             ip.contactInfo,
+             ip.apiEndpoint,
+             ip.createdAt,
+             ip.updatedAt,
              COUNT(bs.billingID) as totalBillings,
              COUNT(CASE WHEN bs.status = 'paid' THEN 1 END) as paidBillings,
              SUM(CASE WHEN bs.status = 'paid' THEN bs.totalCost ELSE 0 END) as totalPaidAmount
       FROM InsuranceProvider ip
       LEFT JOIN BillingSummary bs ON ip.providerID = bs.insuranceProviderID
       WHERE ip.providerID = ?
-      GROUP BY ip.providerID
+      GROUP BY ip.providerID, ip.providerName, ip.contactInfo, ip.apiEndpoint, ip.createdAt, ip.updatedAt
     `;
 
     db.get(sql, [providerID], (err, row) => {
@@ -68,14 +78,19 @@ class InsuranceProvider {
   static getByName(providerName, callback) {
     const db = new sqlite3.Database(DB_PATH);
     const sql = `
-      SELECT ip.*,
+      SELECT ip.providerID,
+             ip.providerName,
+             ip.contactInfo,
+             ip.apiEndpoint,
+             ip.createdAt,
+             ip.updatedAt,
              COUNT(bs.billingID) as totalBillings,
              COUNT(CASE WHEN bs.status = 'paid' THEN 1 END) as paidBillings,
              SUM(CASE WHEN bs.status = 'paid' THEN bs.totalCost ELSE 0 END) as totalPaidAmount
       FROM InsuranceProvider ip
       LEFT JOIN BillingSummary bs ON ip.providerID = bs.insuranceProviderID
       WHERE ip.providerName = ?
-      GROUP BY ip.providerID
+      GROUP BY ip.providerID, ip.providerName, ip.contactInfo, ip.apiEndpoint, ip.createdAt, ip.updatedAt
     `;
 
     db.get(sql, [providerName], (err, row) => {

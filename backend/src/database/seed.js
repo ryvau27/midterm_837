@@ -177,6 +177,18 @@ const seedData = {
             providerName: 'HealthFirst Insurance',
             contactInfo: JSON.stringify({ phone: '800-123-4567', email: 'claims@healthfirst.com' }),
             apiEndpoint: 'http://mock-insurance-api/healthfirst'
+        },
+        {
+            providerID: 2,
+            providerName: 'BlueCross BlueShield',
+            contactInfo: JSON.stringify({ phone: '800-555-1234', email: 'claims@bcbs.com' }),
+            apiEndpoint: 'http://mock-insurance-api/bcbs'
+        },
+        {
+            providerID: 3,
+            providerName: 'Aetna Health',
+            contactInfo: JSON.stringify({ phone: '800-555-5678', email: 'claims@aetna.com' }),
+            apiEndpoint: 'http://mock-insurance-api/aetna'
         }
     ],
 

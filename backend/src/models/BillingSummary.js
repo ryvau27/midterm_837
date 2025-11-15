@@ -15,6 +15,11 @@ class BillingSummary {
     this.insuranceProviderID = data.insuranceProviderID;
     this.createdAt = data.createdAt;
     this.updatedAt = data.updatedAt;
+    // Additional fields from joins
+    this.physicianID = data.physicianID;
+    this.patientName = data.patientName;
+    this.physicianName = data.physicianName;
+    this.providerName = data.providerName;
   }
 
   // Valid billing statuses
@@ -26,7 +31,7 @@ class BillingSummary {
   static getAll(callback) {
     const db = new sqlite3.Database(DB_PATH);
     const sql = `
-      SELECT bs.*, v.visitDate, v.reason, p.name as patientName,
+      SELECT bs.*, v.visitDate, v.reason, v.physicianID, p.name as patientName,
              ip.providerName, phys.name as physicianName
       FROM BillingSummary bs
       LEFT JOIN Visit v ON bs.visitID = v.visitID
@@ -52,7 +57,7 @@ class BillingSummary {
   static getById(billingID, callback) {
     const db = new sqlite3.Database(DB_PATH);
     const sql = `
-      SELECT bs.*, v.visitDate, v.reason, p.name as patientName,
+      SELECT bs.*, v.visitDate, v.reason, v.physicianID, p.name as patientName,
              ip.providerName, phys.name as physicianName
       FROM BillingSummary bs
       LEFT JOIN Visit v ON bs.visitID = v.visitID
@@ -80,7 +85,7 @@ class BillingSummary {
   static getByPhysicianId(physicianID, callback) {
     const db = new sqlite3.Database(DB_PATH);
     const sql = `
-      SELECT bs.*, v.visitDate, v.reason, p.name as patientName,
+      SELECT bs.*, v.visitDate, v.reason, v.physicianID, p.name as patientName,
              ip.providerName, phys.name as physicianName
       FROM BillingSummary bs
       LEFT JOIN Visit v ON bs.visitID = v.visitID
@@ -112,7 +117,7 @@ class BillingSummary {
 
     const db = new sqlite3.Database(DB_PATH);
     const sql = `
-      SELECT bs.*, v.visitDate, v.reason, p.name as patientName,
+      SELECT bs.*, v.visitDate, v.reason, v.physicianID, p.name as patientName,
              ip.providerName, phys.name as physicianName
       FROM BillingSummary bs
       LEFT JOIN Visit v ON bs.visitID = v.visitID

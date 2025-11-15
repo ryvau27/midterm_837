@@ -8,6 +8,7 @@ class Visit {
   constructor(data = {}) {
     this.visitID = data.visitID;
     this.patientRecordID = data.patientRecordID;
+    this.patientID = data.patientID; // Added to support billing
     this.visitDate = data.visitDate;
     this.reason = data.reason;
     this.physicianID = data.physicianID;
@@ -15,6 +16,9 @@ class Visit {
     this.status = data.status;
     this.createdAt = data.createdAt;
     this.updatedAt = data.updatedAt;
+    // Additional fields from joins
+    this.patientName = data.patientName;
+    this.physicianName = data.physicianName;
   }
 
   // Get all visits

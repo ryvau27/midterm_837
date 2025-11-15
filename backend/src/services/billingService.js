@@ -194,13 +194,22 @@ const billingService = {
         return;
       }
 
-      if (providers.length === 0) {
+      if (!providers || providers.length === 0) {
         callback(new Error('No insurance providers available'), null);
         return;
       }
 
       // Simple assignment based on patient ID
       const providerIndex = patientID % providers.length;
+      
+      // Verify the provider exists at the calculated index
+      if (!providers[providerIndex] || !providers[providerIndex].providerID) {
+        console.error('Provider not found at index:', providerIndex);
+        console.error('Providers array:', providers);
+        callback(new Error(`Invalid provider assignment for patient ${patientID}`), null);
+        return;
+      }
+
       callback(null, providers[providerIndex].providerID);
     });
   },
