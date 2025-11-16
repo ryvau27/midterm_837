@@ -7,8 +7,8 @@ const router = express.Router();
 // Apply authentication to all routes
 router.use(authenticateUser);
 
-// Search patients (Physician only)
-router.get('/search', authorizeRole(['physician']), (req, res) => {
+// Search patients (Physician and Nurse)
+router.get('/search', authorizeRole(['physician', 'nurse']), (req, res) => {
   const { query } = req.query;
 
   if (!query || query.trim().length === 0) {
@@ -71,8 +71,8 @@ router.get('/me', authorizeRole(['patient']), isolatePatientData, (req, res) => 
   });
 });
 
-// Get patient by ID (Physician only)
-router.get('/:id', authorizeRole(['physician']), (req, res) => {
+// Get patient by ID (Physician and Nurse)
+router.get('/:id', authorizeRole(['physician', 'nurse']), (req, res) => {
   const patientID = parseInt(req.params.id);
 
   if (isNaN(patientID)) {

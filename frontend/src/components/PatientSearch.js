@@ -29,13 +29,9 @@ const PatientSearch = ({ onPatientSelect }) => {
     }
   };
 
-  const handlePatientClick = async (patient) => {
-    try {
-      const response = await patientAPI.getById(patient.personID);
-      onPatientSelect(response.data);
-    } catch (err) {
-      setError('Failed to load patient record. Please try again.');
-    }
+  const handlePatientClick = (patient) => {
+    // Just pass the patient object - PatientRecord will fetch the full record
+    onPatientSelect(patient);
   };
 
   return (

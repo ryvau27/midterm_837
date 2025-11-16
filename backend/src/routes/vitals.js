@@ -60,7 +60,7 @@ router.post('/patients/:patientId/vitals', authorizeRole(['nurse']), (req, res) 
     }
 
     // Get or create patient record
-    PatientRecord.getByPatientId(patientID, (err, patientRecord) => {
+    PatientRecord.getByPatientId(patientID, (err, patientRecords) => {
       if (err) {
         console.error('Patient record lookup error:', err);
         return res.status(500).json({
@@ -69,12 +69,15 @@ router.post('/patients/:patientId/vitals', authorizeRole(['nurse']), (req, res) 
         });
       }
 
-      if (!patientRecord) {
+      // getByPatientId returns an array, get the first (most recent) record
+      if (!patientRecords || patientRecords.length === 0) {
         return res.status(404).json({
           success: false,
-          message: 'Patient record not found'
+          message: 'Patient record not found. Patient must have a medical record before vital signs can be recorded.'
         });
       }
+
+      const patientRecord = patientRecords[0]; // Use the most recent record
 
       // Determine which visit to use
       let targetVisitId = visitId;
@@ -102,13 +105,12 @@ router.post('/patients/:patientId/vitals', authorizeRole(['nurse']), (req, res) 
         });
       } else {
         // Create a new visit for today's vital signs recording
-        const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
-
         const newVisit = new Visit({
           patientRecordID: patientRecord.recordID,
           visitDate: new Date().toISOString(),
           reason: 'Vital signs recording',
-          notes: 'Automated visit for vital signs recording'
+          notes: 'Automated visit for vital signs recording',
+          status: 'completed'
         });
 
         newVisit.save((err, result) => {

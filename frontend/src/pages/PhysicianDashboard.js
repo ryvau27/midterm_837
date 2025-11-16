@@ -11,7 +11,7 @@ const PhysicianDashboard = () => {
 
   const handlePatientSelect = (patient) => {
     setSelectedPatient(patient);
-    setActiveTab('record');
+    // Keep on search tab to show the patient record
   };
 
   const handleBackToSearch = () => {

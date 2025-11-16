@@ -16,7 +16,7 @@ const USERS = {
 const ROLE_PERMISSIONS = {
     physician: ['/api/patients/search', '/api/patients/:id', '/api/visits/unbilled', '/api/billing/generate'],
     patient: ['/api/patients/me'],
-    nurse: ['/api/patients/:patientId/vitals'],
+    nurse: ['/api/patients/search', '/api/patients/:id', '/api/patients/:patientId/vitals'],
     admin: ['/api/audit/logs']
 };
 
