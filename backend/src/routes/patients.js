@@ -42,6 +42,35 @@ router.get('/search', authorizeRole(['physician']), (req, res) => {
   });
 });
 
+// Get current patient's own data (Patient only)
+// IMPORTANT: This must come BEFORE /:id route to prevent "me" being treated as an ID
+router.get('/me', authorizeRole(['patient']), isolatePatientData, (req, res) => {
+  const patientID = req.user.personID;
+  const patient = new Patient({ personID: patientID });
+
+  patient.getMedicalRecord((err, record) => {
+    if (err) {
+      console.error('Patient self-record retrieval error:', err);
+      return res.status(500).json({
+        success: false,
+        message: 'Error retrieving your medical record'
+      });
+    }
+
+    if (!record) {
+      return res.status(404).json({
+        success: false,
+        message: 'Your medical record was not found'
+      });
+    }
+
+    res.json({
+      success: true,
+      data: record
+    });
+  });
+});
+
 // Get patient by ID (Physician only)
 router.get('/:id', authorizeRole(['physician']), (req, res) => {
   const patientID = parseInt(req.params.id);
@@ -67,34 +96,6 @@ router.get('/:id', authorizeRole(['physician']), (req, res) => {
       return res.status(404).json({
         success: false,
         message: 'Patient record not found'
-      });
-    }
-
-    res.json({
-      success: true,
-      data: record
-    });
-  });
-});
-
-// Get current patient's own data (Patient only)
-router.get('/me', authorizeRole(['patient']), isolatePatientData, (req, res) => {
-  const patientID = req.user.personID;
-  const patient = new Patient({ personID: patientID });
-
-  patient.getMedicalRecord((err, record) => {
-    if (err) {
-      console.error('Patient self-record retrieval error:', err);
-      return res.status(500).json({
-        success: false,
-        message: 'Error retrieving your medical record'
-      });
-    }
-
-    if (!record) {
-      return res.status(404).json({
-        success: false,
-        message: 'Your medical record was not found'
       });
     }
 
