@@ -1,0 +1,45 @@
+# Source code (only dist should be published if this were a library)
+src/
+
+# Tests
+tests/
+*.test.js
+*.spec.js
+
+# Development files
+.env*
+nodemon.json
+
+# Documentation
+README.md
+docs/
+
+# Build artifacts
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage
+coverage/
+.nyc_output
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+.dockerignore

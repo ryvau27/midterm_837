@@ -31,7 +31,32 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+### UPM Constitution Compliance Gates
+
+**GATE 1 - HIPAA Compliance and Security**
+- [ ] Does the feature handle patient PHI appropriately?
+- [ ] Is audit logging implemented for all data access?
+- [ ] Are security measures appropriate for academic demonstration?
+
+**GATE 2 - Role-Based Access Control**
+- [ ] Does the feature respect user roles (Physician, Patient, Nurse, System Administrator)?
+- [ ] Are role permissions properly enforced on API endpoints?
+- [ ] Does authentication redirect to role-specific dashboards?
+
+**GATE 3 - Data Integrity and Validation**
+- [ ] Are medical data inputs validated for realistic ranges?
+- [ ] Do vital signs conform to medical standards?
+- [ ] Is referential integrity maintained?
+
+**GATE 4 - Audit Logging and Accountability**
+- [ ] Are all record accesses logged with timestamps and actor IDs?
+- [ ] Are audit logs immutable and read-only?
+- [ ] Can system administrators review compliance logs?
+
+**GATE 5 - Technical Standards**
+- [ ] Is JavaScript used exclusively (NO TypeScript)?
+- [ ] Are Docker and Docker Compose utilized?
+- [ ] Does the architecture follow RESTful API design?
 
 ## Project Structure
 
