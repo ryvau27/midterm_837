@@ -8,7 +8,10 @@ const AdminDashboard = () => {
   const [stats, setStats] = useState(null);
   const [loadingStats, setLoadingStats] = useState(true);
 
+  console.log('[AdminDashboard] Rendered for user:', user);
+
   useEffect(() => {
+    console.log('[AdminDashboard] Loading audit stats...');
     loadAuditStats();
   }, []);
 

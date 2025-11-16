@@ -9,6 +9,8 @@ const PhysicianDashboard = () => {
   const [selectedPatient, setSelectedPatient] = useState(null);
   const [activeTab, setActiveTab] = useState('search');
 
+  console.log('[PhysicianDashboard] Rendered for user:', user);
+
   const handlePatientSelect = (patient) => {
     setSelectedPatient(patient);
     // Keep on search tab to show the patient record

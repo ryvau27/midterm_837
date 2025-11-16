@@ -57,27 +57,21 @@ api.interceptors.response.use(
 // Authentication
 export const authAPI = {
   login: async (username, password) => {
-    // For demo purposes, we'll validate on the frontend first
-    // In a real app, this would only be done on the server
-    const validUsers = {
-      'dr.smith': { password: 'physician123', role: 'physician', personID: 1, name: 'Dr. Smith' },
-      'john.doe': { password: 'patient123', role: 'patient', personID: 2, name: 'John Doe' },
-      'nurse.jane': { password: 'nurse123', role: 'nurse', personID: 3, name: 'Nurse Jane' },
-      'admin': { password: 'admin123', role: 'admin', personID: 4, name: 'Admin User' }
-    };
-
-    const user = validUsers[username];
-    if (user && user.password === password) {
-      return {
-        data: { user: { personID: user.personID, username, role: user.role, name: user.name } },
-        success: true
-      };
-    } else {
-      throw new Error('Invalid username or password');
+    console.log('[authAPI] Login called for username:', username);
+    console.log('[authAPI] Sending POST to /auth/login');
+    
+    try {
+      const response = await api.post('/auth/login', { username, password });
+      console.log('[authAPI] Backend response:', response.data);
+      return response.data;
+    } catch (error) {
+      console.error('[authAPI] Login request failed:', error);
+      throw error;
     }
   },
 
   logout: async () => {
+    console.log('[authAPI] Logout called');
     const response = await api.post('/auth/logout');
     return response.data;
   }

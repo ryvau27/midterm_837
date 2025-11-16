@@ -11,6 +11,8 @@ const NurseDashboard = () => {
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState(''); // 'success' or 'error'
 
+  console.log('[NurseDashboard] Rendered for user:', user);
+
   const handlePatientSelect = (patient) => {
     setSelectedPatient(patient);
     setMessage('');

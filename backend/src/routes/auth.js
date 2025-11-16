@@ -13,10 +13,13 @@ const USERS = {
 
 // Login endpoint (public)
 router.post('/login', auditLogin, (req, res) => {
+    console.log('[Auth Route] POST /login received');
     const { username, password } = req.body;
+    console.log('[Auth Route] Username:', username, '| Password length:', password?.length);
 
     // Validate input
     if (!username || !password) {
+        console.log('[Auth Route] Missing credentials');
         return res.status(400).json({
             success: false,
             message: 'Username and password are required'
@@ -26,6 +29,7 @@ router.post('/login', auditLogin, (req, res) => {
     // Check if user exists
     const user = USERS[username];
     if (!user) {
+        console.log('[Auth Route] User not found:', username);
         // User doesn't exist - log failed attempt
         return res.status(401).json({
             success: false,
@@ -35,6 +39,7 @@ router.post('/login', auditLogin, (req, res) => {
 
     // Check password (plain text comparison as per requirements)
     if (password !== user.password) {
+        console.log('[Auth Route] Invalid password for user:', username);
         // Wrong password - log failed attempt
         return res.status(401).json({
             success: false,
@@ -43,6 +48,7 @@ router.post('/login', auditLogin, (req, res) => {
     }
 
     // Successful login - return user info (will be logged by auditLogin middleware)
+    console.log('[Auth Route] Login successful for user:', username, '| Role:', user.role);
     const userInfo = {
         personID: user.personID,
         username,
@@ -50,6 +56,7 @@ router.post('/login', auditLogin, (req, res) => {
         name: user.name
     };
 
+    console.log('[Auth Route] Sending success response');
     res.json({
         success: true,
         data: { user: userInfo },

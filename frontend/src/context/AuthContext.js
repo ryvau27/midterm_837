@@ -32,12 +32,16 @@ export const AuthProvider = ({ children }) => {
 
   // Login function
   const login = async (username, password) => {
+    console.log('[AuthContext] Login called for username:', username);
     try {
       // Call the API for authentication and audit logging
+      console.log('[AuthContext] Calling authAPI.login...');
       const response = await authAPI.login(username, password);
+      console.log('[AuthContext] API response:', response);
 
       if (response.success && response.data.user) {
         const userInfo = response.data.user;
+        console.log('[AuthContext] Login successful, user info:', userInfo);
 
         // Store in localStorage
         localStorage.setItem('upm_user', JSON.stringify(userInfo));
@@ -45,10 +49,11 @@ export const AuthProvider = ({ children }) => {
 
         return { success: true, user: userInfo };
       } else {
+        console.log('[AuthContext] Login failed:', response.message);
         return { success: false, message: response.message || 'Login failed' };
       }
     } catch (error) {
-      console.error('Login error:', error);
+      console.error('[AuthContext] Login error:', error);
       return { success: false, message: error.message || 'Login failed' };
     }
   };

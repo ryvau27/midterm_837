@@ -28,10 +28,15 @@ const LoginPage = () => {
     setLoading(true);
     setError('');
 
+    console.log('[LoginPage] Form submitted with username:', formData.username);
+
     try {
+      console.log('[LoginPage] Calling login function...');
       const result = await login(formData.username, formData.password);
+      console.log('[LoginPage] Login result:', result);
 
       if (result.success) {
+        console.log('[LoginPage] Login successful, redirecting to dashboard for role:', result.user.role);
         // Redirect based on user role
         const roleRoutes = {
           physician: '/physician-dashboard',
@@ -42,11 +47,12 @@ const LoginPage = () => {
 
         navigate(roleRoutes[result.user.role] || '/');
       } else {
+        console.log('[LoginPage] Login failed:', result.message);
         setError(result.message || 'Login failed');
       }
     } catch (err) {
+      console.error('[LoginPage] Login error:', err);
       setError('An error occurred during login');
-      console.error('Login error:', err);
     } finally {
       setLoading(false);
     }

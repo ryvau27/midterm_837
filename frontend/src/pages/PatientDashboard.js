@@ -5,6 +5,8 @@ import PatientRecordView from '../components/PatientRecordView';
 const PatientDashboard = () => {
   const { user, logout } = useAuth();
 
+  console.log('[PatientDashboard] Rendered for user:', user);
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
